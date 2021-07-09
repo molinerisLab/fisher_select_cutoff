@@ -15,16 +15,19 @@ def main():
 	usage = '''
 %prog < STDIN
 
+For each possible cutoff in scores, compute a contingency table of greater / lower / positive / negative and apply a fisher exact test.
+Greater and lower are accorting to the cutoff and the score, positive and negative are according to label given in input.
+The pos / neg labels can be given in two different way, standard mode and universe (-u) mode.
+
 # Input
 
 ## Standard mode
 
 .META: STDIN
-	1	stratum	a test is calcualted for each stratum separately
-	2	score	numeric
-	3	pos_neg	eiter in {"pos","neg"} or in {0,1}
+	1	stratum		a test is calcualted for each stratum separately
+	2	score		numeric
+	3	pos_neg		a label either in {"pos","neg"} or in {0,1}
 
-for each possible cutoff in scores, compute a contingency table of greater / lower / positive / negativa and apply a fisher exact test
 
 
 ## Unverse mode
@@ -37,6 +40,8 @@ for each possible cutoff in scores, compute a contingency table of greater / low
 .META: universe_file
 	1	item_id
 	3	pos_neg	eiter in {"pos","neg"} or in {0,1}
+
+For each possible cutoff in scores, compute a contingency table of greater / lower / positive / negative and apply a fisher exact test.
 
 # Output
 
